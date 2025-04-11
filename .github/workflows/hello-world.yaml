@@ -1,0 +1,14 @@
+# Name of the workflow
+name: My first workflow
+# Event on whch we want to trigger workflow. workflow_dispatch depicts a manual trigger by the user.
+on: workflow_dispatch
+# Defining jobs
+jobs:
+  hello-world-job:
+    # Runner info. Using Github defined runners - which are free to use in public repositories
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: step-1
+        run: echo "Hello World!
+      - name: step-2
+        run: echo "This is how we specify multiple steps! Now bye!"
