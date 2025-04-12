@@ -21,5 +21,8 @@ jobs:
           node-version: 18
       - name: Install other dependencies with versions locked in package.json
         run: npm ci
+        # If working directory is not specified it picks up current working directory.
+        working-directory: ./react-app-automation-testing
       - name: Run the automation tests
         run: npm test
+        working-directory: ./react-app-automation-testing
