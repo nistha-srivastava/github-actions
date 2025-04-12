@@ -1,0 +1,25 @@
+name: Run automated tests for a react application
+# Trigger for this workflow is whenever a new item is pushed in the repo.
+on:
+  push:
+    # Adding specific paths on which this workflow should be triggered.
+    paths:
+      - 'react_app_automation_test/**'
+      - '.github/workflows/2_react_app_automation_test.yaml'
+jobs:
+  automation-test:
+    runs_on: ubuntu-24.04-arm
+    steps:
+      - name: Install repo on runner
+        # Using a pre existing runner to install a repo
+        # By default the repo name is picked using ${{ github.repositoy }}
+        uses: actions/checkout@v4
+      - name: Install nodejs version 18
+        uses: actions/setup-node@v4
+        # Adding custom config values to this predefined action
+        with:
+          - node-version: 18
+      - name: Install other dependencies with versions locked in package.json
+        run: npm ci
+      - name: Run the automation tests
+        run: npm test
