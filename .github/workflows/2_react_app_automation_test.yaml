@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v4
         # Adding custom config values to this predefined action
         with:
-          - node-version: 18
+          node-version: 18
       - name: Install other dependencies with versions locked in package.json
         run: npm ci
       - name: Run the automation tests
