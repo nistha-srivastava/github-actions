@@ -5,7 +5,7 @@ on:
       - "app-test-build-issue/**"
       - ".github/workflows/4_app_test_build_issue.yaml"
   issues:
-    types: [opened]
+    types: [opened,edited]
 jobs:
   lint-test-on-push:
     if: github.event_name == 'push'
@@ -49,4 +49,6 @@ jobs:
     steps:
       - name: Print issue object context
         run: echo "${{ toJSON(github) }}"
+      - name: Print the issue created
+        run: echo "${{ toJSON(github.event.issue.body) }}"
 
