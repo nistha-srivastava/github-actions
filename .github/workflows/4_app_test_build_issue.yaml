@@ -54,3 +54,5 @@ jobs:
       - name: Print the issue created
         run: echo "${{ toJSON(github.event.issue.body) }}"
 
+# Adding a comment. To avoid running this workflow just because of a comment, in your commit message add [skip actions].
+# This can be used with - push, pull_request events
