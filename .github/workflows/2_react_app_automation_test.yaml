@@ -4,7 +4,7 @@ on:
   push:
     # Adding specific paths on which this workflow should be triggered.
     paths:
-      - 'react_app_automation_test/**'
+      - 'react-app-automation-testing/**'
       - '.github/workflows/2_react_app_automation_test.yaml'
 jobs:
   automation-test:
