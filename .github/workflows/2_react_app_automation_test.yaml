@@ -8,7 +8,7 @@ on:
       - '.github/workflows/2_react_app_automation_test.yaml'
 jobs:
   automation-test:
-    runs_on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Install repo on runner
         # Using a pre existing runner to install a repo
