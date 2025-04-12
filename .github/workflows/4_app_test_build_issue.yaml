@@ -1,0 +1,42 @@
+name: "4. Lint, test and build an application + have a job for issue event"
+on: 
+  push:
+    paths:
+      - "app-test-build-issue/**"
+      - ".github/workflows/4_app_test_build_issue.yaml"
+  issue:
+jobs:
+  lint-test-on-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Fetch repository
+        uses: actions/checkout@v4
+      - name: Install nodejs version 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Other dependencies
+        run: npm ci
+        working-directory: ./app-test-build-issue
+      - name: Lint
+        run: npm lint
+      - name: Test
+        run: npm test
+  deploy-post-test-on-push:
+      if: github.event_name == push
+      needs: lint-test-on-push
+      runs-on: ubuntu-24.04-arm
+      steps:
+        - name: Fetch repository
+        uses: actions/checkout@v4
+        - name: Install nodejs version 18
+          uses: actions/setup-node@v3
+          with:
+            node-version: 18
+        - name: Install Other dependencies
+          run: npm ci
+          working-directory: ./app-test-build-issue
+        - name: Build
+          run: npm build
+
