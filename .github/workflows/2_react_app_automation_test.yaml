@@ -6,6 +6,9 @@ on:
     paths:
       - 'react-app-automation-testing/**'
       - '.github/workflows/2_react_app_automation_test.yaml'
+  # We can have multiple events for a workflow.
+  workflow_dispatch:
+
 jobs:
   automation-test:
     runs-on: ubuntu-24.04-arm
