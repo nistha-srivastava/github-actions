@@ -20,8 +20,10 @@ jobs:
         working-directory: ./app-test-build-issue
       - name: Lint
         run: npm lint
+        working-directory: ./app-test-build-issue
       - name: Test
         run: npm test
+        working-directory: ./app-test-build-issue
   deploy-post-test-on-push:
       if: github.event_name == 'push'
       needs: lint-test-on-push
@@ -38,4 +40,5 @@ jobs:
           working-directory: ./app-test-build-issue
         - name: Build
           run: npm build
+          working-directory: ./app-test-build-issue
 
