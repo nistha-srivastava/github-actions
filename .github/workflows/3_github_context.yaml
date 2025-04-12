@@ -1,7 +1,8 @@
 name: Check the usage of github context objects
 on: workflow_dispatch
 jobs:
-  runs-on: ubuntu-24.04-arm
-  steps:
-    - name: Fetch details from github context object regarding this wokrflow
-      run: echo "${{ github }}"
+  github-context-fetch:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Fetch details from github context object regarding this wokrflow
+        run: echo "${{ github }}"
