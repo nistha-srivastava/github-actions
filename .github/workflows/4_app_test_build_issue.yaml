@@ -4,6 +4,8 @@ on:
     paths:
       - "app-test-build-issue/**"
       - ".github/workflows/4_app_test_build_issue.yaml"
+  issues:
+    types: [opened]
 jobs:
   lint-test-on-push:
     if: github.event_name == 'push'
@@ -41,4 +43,10 @@ jobs:
         - name: Build
           run: npm run build
           working-directory: ./app-test-build-issue
+  issue-job-context:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Print issue object context
+        run: echo "${{ toJSON(github) }}"
 
