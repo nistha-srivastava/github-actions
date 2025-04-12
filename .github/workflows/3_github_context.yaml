@@ -1,8 +1,8 @@
-name: Check the usage of github context objects
+name: 3. Check the usage of github context objects
 on: workflow_dispatch
 jobs:
   github-context-fetch:
     runs-on: ubuntu-24.04-arm
     steps:
       - name: Fetch details from github context object regarding this wokrflow
-        run: echo "${{ github }}"
+        run: echo "${{ toJSON(github) }}"

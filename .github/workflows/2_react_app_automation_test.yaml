@@ -1,4 +1,4 @@
-name: Run automated tests for a react application
+name: 2. Run automated tests for a react application
 # Trigger for this workflow is whenever a new item is pushed in the repo.
 on:
   push:

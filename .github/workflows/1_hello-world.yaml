@@ -1,5 +1,5 @@
 # Name of the workflow
-name: My first workflow
+name: 1. My first workflow
 # Event on whch we want to trigger workflow. workflow_dispatch depicts a manual trigger by the user.
 on: workflow_dispatch
 # Defining jobs
