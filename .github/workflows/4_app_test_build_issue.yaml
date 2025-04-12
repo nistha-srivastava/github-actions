@@ -4,7 +4,6 @@ on:
     paths:
       - "app-test-build-issue/**"
       - ".github/workflows/4_app_test_build_issue.yaml"
-  issue:
 jobs:
   lint-test-on-push:
     if: github.event_name == 'push'
