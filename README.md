@@ -31,3 +31,11 @@ Using the same React app, this workflow focuses on:
 - Applying **filters** (e.g., path filters, event types).
 - Understanding event activity types and refining when workflows run.
 
+
+
+
+## 📚 Learning Source
+
+This repository is part of a hands-on course/tutorial on **GitHub Actions**. It demonstrates concepts through actual workflows and is meant to serve as both a reference and a sandbox for experimenting with CI/CD automation.
+
+> 📘 Source of learning: [GitHub Actions - The Complete Guide](https://www.udemy.com/course/github-actions-the-complete-guide/) on Udemy
